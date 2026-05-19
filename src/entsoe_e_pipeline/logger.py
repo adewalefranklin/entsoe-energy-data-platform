@@ -1,8 +1,9 @@
-import logging 
+import logging
+
 
 def get_logger(name: str) -> logging.Logger:
     logger = logging.getLogger(name)
-    
+
     if not logger.handlers:
         logger.setLevel(logging.INFO)
 
@@ -10,9 +11,9 @@ def get_logger(name: str) -> logging.Logger:
         handler.setLevel(logging.INFO)
 
         formatter = logging.Formatter(
-            '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-            )
-        
+            "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+        )
+
         handler.setFormatter(formatter)
         logger.addHandler(handler)
 
