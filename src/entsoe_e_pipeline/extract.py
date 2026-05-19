@@ -12,9 +12,7 @@ class Extractor:
 
     def data_extractor(self, endpoint: str, params: dict) -> dict:
         url = f"{self.base_url}/{endpoint}"
-        headers = {
-            "Accept": "application/xml"
-        }
+        headers = {"Accept": "application/xml"}
         try:
             response = requests.get(url, params=params, headers=headers, timeout=10)
             response.raise_for_status()
