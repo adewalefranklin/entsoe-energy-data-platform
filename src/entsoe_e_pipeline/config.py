@@ -6,7 +6,15 @@ load_dotenv()
 
 
 class Config:
-    required_vars = ["API_KEY", "BASE_URL"]
+    required_vars = [
+        "API_KEY",
+        "BASE_URL",
+        "AWS_ACCESS_KEY_ID",
+        "AWS_SECRET_ACCESS_KEY",
+        "AWS_BUCKET_NAME",
+        "AWS_REGION",
+        "PREFIX",
+    ]
 
     @classmethod
     def get(cls, var_name):

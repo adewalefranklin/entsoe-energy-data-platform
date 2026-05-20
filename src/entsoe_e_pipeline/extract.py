@@ -11,7 +11,7 @@ class Extractor:
         self.logger = get_logger(__name__)
 
     def data_extractor(self, endpoint: str, params: dict) -> dict:
-        url = f"{self.base_url}/{endpoint}"
+        url = self.base_url
         headers = {"Accept": "application/xml"}
         try:
             response = requests.get(url, params=params, headers=headers, timeout=10)
