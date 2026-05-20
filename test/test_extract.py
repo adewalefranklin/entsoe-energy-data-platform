@@ -7,7 +7,7 @@ def test_data_extractor_success(mocker):
 
     mocker.patch(
         "entsoe_e_pipeline.extract.Config.get",
-        side_effect=["fake_api_key", "fake_base_url"]
+        side_effect=["fake_api_key", "fake_base_url"],
     )
 
     fake_response = mocker.Mock()
@@ -15,16 +15,12 @@ def test_data_extractor_success(mocker):
     fake_response.text = "<data>test</data>"
 
     mock_get = mocker.patch(
-        "entsoe_e_pipeline.extract.requests.get",
-        return_value=fake_response
+        "entsoe_e_pipeline.extract.requests.get", return_value=fake_response
     )
 
     extractor = Extractor()
 
-    result = extractor.data_extractor(
-        "test-endpoint",
-        {"param": "value"}
-    )
+    result = extractor.data_extractor("test-endpoint", {"param": "value"})
 
     assert result == "<data>test</data>"
 
