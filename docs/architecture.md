@@ -1,5 +1,6 @@
 # ENTSO-E Energy Data Platform Architecture
 
+```text
                     ┌──────────────────────────┐
                     │      ENTSO-E API          │
                     │  Generation / Price Data  │
