@@ -1,6 +1,21 @@
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![Airflow](https://img.shields.io/badge/Airflow-3.2-red)
+![AWS](https://img.shields.io/badge/AWS-S3%20%7C%20Glue-orange)
+![Docker](https://img.shields.io/badge/Docker-Enabled-blue)
+
 # ENTSO-E Energy Data Platform Architecture
 
 ![Pipeline Architecture](docs/entsoe_architecture.png)
+
+
+## Pipeline Flow
+
+1. Extract ENTSO-E market data via API
+2. Store raw JSON data in AWS S3
+3. Orchestrate workflows using Apache Airflow
+4. Transform data using Spark
+5. Load transformed data into Snowflake
+6. Build analytics dashboards in Power BI
 
 
 # ENTSO-E Energy Data Platform
