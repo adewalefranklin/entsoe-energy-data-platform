@@ -45,8 +45,8 @@ if __name__ == "__main__":
             "securityToken": config.get("API_KEY"),
             "in_Domain": "10Y1001A1001A82H",
             "out_Domain": "10Y1001A1001A82H",
-            "periodStart": "202605180000",
-            "periodEnd": "202605182300",
+            "periodStart": "202405010000",
+            "periodEnd": "202405010100",
         }
         params = {
             **entsoe_endpoints[selected_endpoint],

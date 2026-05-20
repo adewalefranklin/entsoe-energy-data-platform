@@ -13,8 +13,11 @@ class Extractor:
     def data_extractor(self, endpoint: str, params: dict) -> dict:
         url = self.base_url
         headers = {"Accept": "application/xml"}
+        params["securityToken"] = self.api_key
         try:
-            response = requests.get(url, params=params, headers=headers, timeout=10)
+            response = requests.get(
+                url, params=params, headers=headers, timeout=(10, 60)
+            )
             response.raise_for_status()
             data = response.text
             self.logger.info(f"Data extracted successfully from {endpoint}")
