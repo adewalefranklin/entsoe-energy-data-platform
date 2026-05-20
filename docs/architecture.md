@@ -1,1 +1,1 @@
-![ENTSO-E Architecture](./entsoe_architecture.jpg.png)
+![ENTSO-E Architecture](./entsoe_architecture.png)
