@@ -8,16 +8,6 @@
 ![Pipeline Architecture](docs/entsoe_architecture.png)
 
 
-## Pipeline Flow
-
-1. Extract ENTSO-E market data via API
-2. Store raw JSON data in AWS S3
-3. Orchestrate workflows using Apache Airflow
-4. Transform data using Spark
-5. Load transformed data into Snowflake
-6. Build analytics dashboards in Power BI
-
-
 # ENTSO-E Energy Data Platform
 
 This project is an end-to-end data engineering pipeline that extracts electricity market data from the ENTSO-E API, stores raw data in AWS S3, and orchestrates the workflow using Apache Airflow.
@@ -31,6 +21,15 @@ The project is designed as a portfolio-grade energy data platform and will be ex
 - Orchestrate the pipeline with Apache Airflow
 - Build a scalable foundation for Spark transformations
 - Prepare data for Snowflake, dbt modelling, and Power BI dashboards
+
+## Pipeline Flow
+
+1. Extract ENTSO-E market data via API
+2. Store raw JSON data in AWS S3
+3. Orchestrate workflows using Apache Airflow
+4. Transform data using Spark
+5. Load transformed data into Snowflake
+6. Build analytics dashboards in Power BI
 
 ## Current Architecture
 
