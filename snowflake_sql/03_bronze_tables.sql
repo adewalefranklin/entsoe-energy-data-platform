@@ -1,3 +1,5 @@
+-- This SQL script creates bronze tables in Snowflake for storing actual generation per type and day-ahead prices from the ENTSOE energy data pipeline. It also includes COPY INTO commands to load data from the respective Snowflake stages and a SELECT statement to preview the loaded data.
+
 CREATE OR REPLACE TABLE bronze_actual_generation_per_type (
     timeseries_id STRING,
     business_type STRING,
@@ -15,17 +17,21 @@ CREATE OR REPLACE TABLE bronze_actual_generation_per_type (
     ingestion_time TIMESTAMP_NTZ
 );
 
+-- copy data from the actual generation stage into the bronze table
+
 COPY INTO bronze_actual_generation_per_type
 FROM @entsoe_stage
 FILE_FORMAT = (TYPE = PARQUET)
 MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+
+-- verify data loaded into bronze_actual_generation_per_type
 
 SELECT *
 FROM bronze_actual_generation_per_type
 LIMIT 20;
 
 
---ENTSOE Day Ahead Prices
+--create bronze table for day-ahead prices
 
 
 CREATE OR REPLACE TABLE bronze_day_ahead_prices (
@@ -44,10 +50,14 @@ CREATE OR REPLACE TABLE bronze_day_ahead_prices (
     INGESTION_TIME TIMESTAMP
 );
 
+--copy data from day-ahead price stage into bronze_day_ahead_prices table
+
 COPY INTO bronze_day_ahead_prices
 FROM @entsoe_price_stage
 FILE_FORMAT = parquet_file
 MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+
+--verify data loaded into bronze_day_ahead_prices
 
 SELECT* FROM bronze_day_ahead_prices
 LIMIT 10

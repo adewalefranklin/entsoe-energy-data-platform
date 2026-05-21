@@ -1,4 +1,4 @@
--- gold_price_generation_analysis
+-- create gold_price_generation_analysis
 
 SELECT
     g.generation_date,
@@ -28,7 +28,7 @@ ON g.generation_date = p.price_date;
 
 
 
---GOLD GENERATION LAYER PRICE ANALYSIS
+-- Generate a gold table that combines daily generation and day-ahead price data, and includes a column indicating whether price data is available for each generation date. This will allow for analysis of the relationship between generation and prices, as well as identification of any gaps in the price data.
 
 CREATE OR REPLACE TABLE gold_generation_price_analysis AS
 
@@ -56,6 +56,8 @@ LEFT JOIN (
 ) p
 
 ON g.generation_date = p.price_date;
+
+-- verify data in gold_generation_price_analysis
 
 SELECT *
 FROM gold_generation_price_analysis;

@@ -1,3 +1,5 @@
+--create snowflake storage integration for s3 bucket
+
 CREATE OR REPLACE STORAGE INTEGRATION s3_int
 TYPE = EXTERNAL_STAGE
 STORAGE_PROVIDER = 'S3'
@@ -10,6 +12,7 @@ STORAGE_ALLOWED_LOCATIONS = (
 DESC INTEGRATION s3_int;
 
 
+--create energy generation stage 
 
 CREATE OR REPLACE STAGE entsoe_stage
 URL = 's3://entsoe-energy-bucket/curated/actual_generation_per_type/'
@@ -18,7 +21,7 @@ FILE_FORMAT = parquet_file
 
 LS @entsoe_stage
 
-
+--create day ahead price stage
 
 CREATE OR REPLACE STAGE entsoe_price_stage
 URL = 's3://entsoe-energy-bucket/curated/day_ahead_prices/'

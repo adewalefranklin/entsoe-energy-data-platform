@@ -1,7 +1,11 @@
+--create silver tables for actual generation per type with production type names
+
 CREATE OR REPLACE TABLE dim_production_type (
     production_code STRING,
     production_name STRING
 );
+
+-- insert production type codes and names into dim_production_type
 
 INSERT INTO dim_production_type VALUES
 ('B02', 'Brown Coal/Lignite'),
@@ -17,6 +21,9 @@ INSERT INTO dim_production_type VALUES
 ('B17', 'Waste'),
 ('B20', 'Other');
 
+
+-- verify data inserted into dim_production_type
+
 SELECT
     b.*,
     d.production_name
@@ -24,6 +31,8 @@ SELECT
 FROM bronze_actual_generation_per_type b
 LEFT JOIN dim_production_type d
     ON b.production_type = d.production_code;
+
+    -- create silver table for actual generation per type with production type names
 
 CREATE OR REPLACE TABLE silver_actual_generation AS
 
@@ -48,6 +57,8 @@ FROM bronze_actual_generation_per_type b
 
 LEFT JOIN dim_production_type d
     ON b.production_type = d.production_code;
+
+-- verify data in silver_actual_generation
 
     SELECT* FROM silver_actual_generation
     LIMIT 10
