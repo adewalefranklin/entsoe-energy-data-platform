@@ -1,3 +1,8 @@
+-- =====================================================
+-- SILVER MODELS
+-- Cleaned and enriched datasets, ready for analysis and reporting
+-- =====================================================
+
 --create silver tables for actual generation per type with production type names
 
 CREATE OR REPLACE TABLE dim_production_type (

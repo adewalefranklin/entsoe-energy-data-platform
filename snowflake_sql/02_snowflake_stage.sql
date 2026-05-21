@@ -1,3 +1,8 @@
+-- =====================================================
+-- SNOWFLAKE STAGE CREATION
+-- Stages are Snowflake objects that point to external locations (like S3 buckets) where data files are stored. They allow Snowflake to access and load data from these locations into Snowflake tables.
+-- =====================================================
+
 --create snowflake storage integration for s3 bucket
 
 CREATE OR REPLACE STORAGE INTEGRATION s3_int

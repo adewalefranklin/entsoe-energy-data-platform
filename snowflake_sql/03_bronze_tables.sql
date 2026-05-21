@@ -1,3 +1,8 @@
+-- =====================================================
+-- BRONZE TABLES
+-- Raw, unprocessed data as ingested from the ENTSOE energy data pipeline
+-- =====================================================
+
 -- This SQL script creates bronze tables in Snowflake for storing actual generation per type and day-ahead prices from the ENTSOE energy data pipeline. It also includes COPY INTO commands to load data from the respective Snowflake stages and a SELECT statement to preview the loaded data.
 
 CREATE OR REPLACE TABLE bronze_actual_generation_per_type (

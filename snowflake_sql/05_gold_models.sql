@@ -1,3 +1,8 @@
+-- =====================================================
+-- GOLD MODELS
+-- Business-ready analytical datasets
+-- =====================================================
+
 -- create gold table for daily total generation per production type
 
 CREATE OR REPLACE TABLE gold_daily_generation AS

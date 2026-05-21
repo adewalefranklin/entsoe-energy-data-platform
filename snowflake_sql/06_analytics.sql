@@ -1,3 +1,8 @@
+-- =====================================================
+-- SAMPLE ANALYTICS QUERIES
+-- analysis derived from gold tables, ready for business use
+-- =====================================================
+
 -- create gold_price_generation_analysis
 
 SELECT
