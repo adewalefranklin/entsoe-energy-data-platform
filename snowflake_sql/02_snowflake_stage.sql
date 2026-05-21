@@ -1,0 +1,29 @@
+CREATE OR REPLACE STORAGE INTEGRATION s3_int
+TYPE = EXTERNAL_STAGE
+STORAGE_PROVIDER = 'S3'
+ENABLED = TRUE
+STORAGE_AWS_ROLE_ARN = 'arn:aws:iam::972775291781:role/snowflake-weather-role'
+STORAGE_ALLOWED_LOCATIONS = (
+'s3://entsoe-energy-bucket/curated/actual_generation_per_type/',
+'s3://entsoe-energy-bucket/curated/day_ahead_prices/'
+);
+DESC INTEGRATION s3_int;
+
+
+
+CREATE OR REPLACE STAGE entsoe_stage
+URL = 's3://entsoe-energy-bucket/curated/actual_generation_per_type/'
+STORAGE_INTEGRATION = s3_int
+FILE_FORMAT = parquet_file
+
+LS @entsoe_stage
+
+
+
+CREATE OR REPLACE STAGE entsoe_price_stage
+URL = 's3://entsoe-energy-bucket/curated/day_ahead_prices/'
+STORAGE_INTEGRATION = s3_int
+FILE_FORMAT = parquet_file;
+
+LS @entsoe_price_stage
+
