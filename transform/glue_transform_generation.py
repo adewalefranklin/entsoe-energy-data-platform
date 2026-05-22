@@ -115,4 +115,3 @@ price_df.show(20, truncate=False)
 price_df.write.mode("overwrite").parquet(output_path)
 
 job.commit()
-job.commit()
