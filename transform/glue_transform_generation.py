@@ -8,7 +8,6 @@ from awsglue.context import GlueContext
 from awsglue.job import Job
 from pyspark.sql import functions as F
 
-
 args = getResolvedOptions(
     sys.argv,
     [
@@ -28,12 +27,7 @@ job.init(args["JOB_NAME"], args)
 raw_path = args["RAW_PATH"]
 output_path = args["OUTPUT_PATH"]
 
-df = (
-    spark.read
-    .format("xml")
-    .option("rowTag", "TimeSeries")
-    .load(raw_path)
-)
+df = spark.read.format("xml").option("rowTag", "TimeSeries").load(raw_path)
 
 clean_df = df.select(
     F.col("mRID").cast("string").alias("timeseries_id"),
@@ -47,7 +41,7 @@ clean_df = df.select(
     F.col("Period.timeInterval.start").alias("period_start"),
     F.col("Period.timeInterval.end").alias("period_end"),
     F.col("Period.resolution").alias("resolution"),
-    F.explode(F.col("Period.Point")).alias("point")
+    F.explode(F.col("Period.Point")).alias("point"),
 )
 
 final_df = clean_df.select(
@@ -64,7 +58,7 @@ final_df = clean_df.select(
     "resolution",
     F.col("point.position").cast("int").alias("position"),
     F.col("point.quantity").cast("double").alias("quantity"),
-    F.current_timestamp().alias("ingestion_time")
+    F.current_timestamp().alias("ingestion_time"),
 )
 
 final_df.show(20, truncate=False)
@@ -72,13 +66,8 @@ final_df.show(20, truncate=False)
 final_df.write.mode("overwrite").parquet(output_path)
 
 
-# Entsoe Dayahead Price 
-raw_df = (
-    spark.read
-    .format("xml")
-    .option("rowTag", "TimeSeries")
-    .load(raw_path)
-)
+# Entsoe Dayahead Price
+raw_df = spark.read.format("xml").option("rowTag", "TimeSeries").load(raw_path)
 
 cleaned_df = raw_df.select(
     F.col("mRID").cast("string").alias("timeseries_id"),
@@ -91,7 +80,7 @@ cleaned_df = raw_df.select(
     F.col("Period.timeInterval.start").alias("period_start"),
     F.col("Period.timeInterval.end").alias("period_end"),
     F.col("Period.resolution").alias("resolution"),
-    F.explode(F.col("Period.Point")).alias("point")
+    F.explode(F.col("Period.Point")).alias("point"),
 )
 
 price_df = cleaned_df.select(
@@ -107,7 +96,7 @@ price_df = cleaned_df.select(
     "resolution",
     F.col("point.position").cast("int").alias("position"),
     F.col("point.`price.amount`").cast("double").alias("price_amount"),
-    F.current_timestamp().alias("ingestion_time")
+    F.current_timestamp().alias("ingestion_time"),
 )
 
 price_df.show(20, truncate=False)

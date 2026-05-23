@@ -28,25 +28,21 @@ def test_data_extractor_success(mocker):
     mock_get.assert_called_once()
 
 
-
 def test_data_extractor_failure(mocker):
 
     mocker.patch(
         "entsoe_e_pipeline.extract.Config.get",
-        side_effect=["FAKE_API_KEY", "FAKE_BASE_URL"]
+        side_effect=["FAKE_API_KEY", "FAKE_BASE_URL"],
     )
 
     mock_get = mocker.patch(
         "entsoe_e_pipeline.extract.requests.get",
-        side_effect=ExtractError("API call failed")
+        side_effect=ExtractError("API call failed"),
     )
 
     extractor = Extractor()
 
     with pytest.raises(ExtractError):
-        extractor.data_extractor(
-            "test-endpoint",
-            {"param": "value"}
-        )
+        extractor.data_extractor("test-endpoint", {"param": "value"})
 
     mock_get.assert_called_once()
