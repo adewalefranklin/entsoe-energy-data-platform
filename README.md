@@ -70,13 +70,8 @@ Power BI Dashboard
 -Git / GitHub
 
 ## Planned additions:
--Apache Spark
--AWS Glue
--Snowflake
 -dbt
 -Power BI
--CI/CD with GitHub Actions
-
 ## Project Structure
 
 entso_e_energy_pipeline/
