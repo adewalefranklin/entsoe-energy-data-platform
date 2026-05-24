@@ -74,6 +74,9 @@ Power BI Dashboard
 -Power BI
 ## Project Structure
 
+## Project Structure
+
+```text
 entso_e_energy_pipeline/
 │
 ├── dags/
@@ -91,10 +94,23 @@ entso_e_energy_pipeline/
 ├── docs/
 │   └── architecture.md
 │
+├── tests/
+│   └── test_extract.py
+│
+├── transform/
+│   └── glue_transform_generation.py
+│
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+│
 ├── docker-compose.yml
 ├── requirements.txt
+├── requirements-dev.txt
+├── pytest.ini
 ├── .gitignore
 └── README.md
+```
 
 # Airflow Orchestration
 
