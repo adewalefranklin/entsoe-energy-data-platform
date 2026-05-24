@@ -1,1 +1,1 @@
-![ENTSO-E Architecture](./entsoe_architecture.png)
+![ENTSO-E Architecture](./entso-e_pipeline_architecture.png)
