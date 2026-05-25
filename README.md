@@ -202,6 +202,8 @@ Implemented dbt staging, silver, and gold models with automated testing, documen
 
 ![dbt Lineage Graph](docs/screenshots/dbt_lineage_graph.png)
 
+The lineage graph below illustrates the dependency flow between staging, silver, and gold dbt models within the ENTSO-E analytical warehouse architecture.
+
 
 ### CI/CD Pipeline
 Implemented GitHub Actions CI pipeline for automated testing, formatting checks, and Docker image validation.
