@@ -188,13 +188,12 @@ Implemented Snowflake ingestion pipeline with bronze, silver, and gold data laye
 ### dbt Transformation & Testing Layer
 Implemented dbt staging, silver, and gold models with automated testing, documentation, and lineage tracking.
 
-### dbt Database Overview
 ![dbt Database Overview](docs/screenshots/dbt_database_overview.png)
 
-### dbt Project Overview
+
 ![dbt Project Overview](docs/screenshots/dbt_project_overview.png)
 
-### dbt Lineage Graph
+
 ![dbt Lineage Graph](docs/screenshots/dbt_lineage_graph.png)
 
 
