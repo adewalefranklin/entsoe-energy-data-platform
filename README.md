@@ -172,13 +172,35 @@ Completed:
 -Successful DAG execution
 -GitHub version control
 
-Next steps:
+## Newly Implemented Components
 
--Add Spark transformation layer
--Write transformed data as Parquet
--Add Snowflake ingestion
--Add dbt models
--Add CI/CD pipeline
--Build Power BI dashboard
+### Spark / AWS Glue Transformation Layer
+Implemented Spark-based transformation logic using AWS Glue to clean, normalize, and process ENTSO-E energy market data.
 
+### Parquet Transformation Output
+Transformed datasets are written in optimized Parquet format for efficient analytical processing and scalable storage.
+
+### Snowflake Ingestion & Data Warehouse
+Implemented Snowflake ingestion pipeline with bronze, silver, and gold data layers for analytical modelling.
+
+![Snowflake Query Output](docs/screenshots/snowflake_query_output.png)
+
+### dbt Transformation & Testing Layer
+Implemented dbt staging, silver, and gold models with automated testing, documentation, and lineage tracking.
+
+### dbt Database Overview
+![dbt Database Overview](docs/screenshots/dbt_database_overview.png)
+
+### dbt Project Overview
+![dbt Project Overview](docs/screenshots/dbt_project_overview.png)
+
+### dbt Lineage Graph
+![dbt Lineage Graph](docs/screenshots/dbt_lineage_graph.png)
+
+
+### CI/CD Pipeline
+Implemented GitHub Actions CI pipeline for automated testing, formatting checks, and Docker image validation.
+
+### Power BI Dashboard (Planned)
+Future implementation of Power BI dashboards for energy market analytics and visualization.
 
