@@ -5,7 +5,7 @@
 
 # ENTSO-E Energy Data Platform Architecture
 
-![Pipeline Architecture](screenshots/entso-e-pipeline_architecture.png)
+![Pipeline Architecture](docs/screenshots/entso-e_pipeline_architecture.png)
 
 
 # ENTSO-E Energy Data Platform
