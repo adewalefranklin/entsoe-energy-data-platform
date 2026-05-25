@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: entsoe_bronze_layers
+    database: ENTSOE_ENERGY_DB
+    schema: ENSTOE_SCHEMA
+    tables:
+      - name: bronze_day_ahead_prices
+      - name: bronze_actual_generation_per_type
