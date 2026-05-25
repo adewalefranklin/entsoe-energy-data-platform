@@ -183,16 +183,22 @@ Transformed datasets are written in optimized Parquet format for efficient analy
 ### Snowflake Ingestion & Data Warehouse
 Implemented Snowflake ingestion pipeline with bronze, silver, and gold data layers for analytical modelling.
 
+### Snowflake Silver Layer Output
+
 ![Snowflake Query Output](docs/screenshots/snowflake_query_output.png)
 
 ### dbt Transformation & Testing Layer
 Implemented dbt staging, silver, and gold models with automated testing, documentation, and lineage tracking.
 
+### dbt Project Documentation
+
 ![dbt Database Overview](docs/screenshots/dbt_database_overview.png)
 
+### dbt Database Overview
 
 ![dbt Project Overview](docs/screenshots/dbt_project_overview.png)
 
+### dbt Lineage Graph
 
 ![dbt Lineage Graph](docs/screenshots/dbt_lineage_graph.png)
 
