@@ -3,6 +3,21 @@
 ![AWS](https://img.shields.io/badge/AWS-S3%20%7C%20Glue-orange)
 ![Docker](https://img.shields.io/badge/Docker-Enabled-blue)
 
+# ENTSO-E Energy Data Platform
+
+An end-to-end cloud-native energy data engineering platform built using Python, AWS, Airflow, Snowflake, dbt, Docker, and GitHub Actions.
+
+The platform extracts electricity market data from the ENTSO-E Transparency Platform API, stores raw data in Amazon S3, performs Spark-based transformations, orchestrates workflows with Apache Airflow, and models analytical datasets in Snowflake using dbt staging, silver, and gold layers.
+
+The project demonstrates modern data engineering practices including:
+- medallion data architecture
+- orchestration
+- automated testing
+- CI/CD pipelines
+- dbt lineage & documentation
+- Docker containerization
+- cloud-native storage & transformation workflows
+
 # ENTSO-E Energy Data Platform Architecture
 
 ![Pipeline Architecture](docs/screenshots/entso-e_pipeline_architecture.png)
