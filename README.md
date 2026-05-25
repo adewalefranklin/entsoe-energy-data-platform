@@ -23,12 +23,6 @@ The project demonstrates modern data engineering practices including:
 ![Pipeline Architecture](docs/screenshots/entso-e_pipeline_architecture.png)
 
 
-# ENTSO-E Energy Data Platform
-
-This project is an end-to-end data engineering pipeline that extracts electricity market data from the ENTSO-E API, stores raw data in AWS S3, and orchestrates the workflow using Apache Airflow.
-
-The project is designed as a portfolio-grade energy data platform and will be extended with Spark/Glue transformations, Snowflake modelling, dbt, and Power BI analytics.
-
 ## Project Goals
 
 - Extract energy data from the ENTSO-E Transparency Platform API
